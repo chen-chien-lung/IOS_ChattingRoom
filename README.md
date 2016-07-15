@@ -4,7 +4,7 @@ This is a simple chatting room and the UIUserNotification is the key method to i
 DeviceToken is the unique key for the Apple APNS to identify the devices that can work this chatting room app.
 
 <img src="https://raw.githubusercontent.com/chen-chien-lung/IOS_ChattingRoom/master/IMG_2765.jpg" width=283px height="504">
-
+ 
 1.Ask user's permission for UIUserNotification.
 <img src="https://github.com/chen-chien-lung/IOS_ChattingRoom/blob/master/RegistUserNotification.png?raw=true">
 
