@@ -40,9 +40,7 @@ parameters completion:(DoneHandler)doneHandler{
               
               NSLog(@"doPOST Error:%@",error);
               doneHandler(error,nil);
-        
           }
     ];
-    
 }
 </pre>
