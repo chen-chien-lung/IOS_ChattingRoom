@@ -16,7 +16,7 @@ DeviceToken is the unique key for the Apple APNS to identify the devices that ca
 <img src="https://github.com/chen-chien-lung/IOS_ChattingRoom/blob/master/UserNotification.png?raw=true">
 
 4.Commnuicator class . This class is to handle all the send/get the message/image function.
-<img src="https://github.com/chen-chien-lung/IOS_ChattingRoom/blob/master/methods.png?raw=true">
+<img src="https://github.com/chen-chien-lung/IOS_ChattingRoom/blob/master/methods.png?raw=true" width=400px height="400">
 
 5.Because this Communicator class will be called lots of times and it should be keep in the memory.So I use the  singleton   
   coding style to program this class.
