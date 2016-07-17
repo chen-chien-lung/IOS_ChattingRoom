@@ -16,7 +16,7 @@ DeviceToken is the unique key for the Apple APNS to identify the devices that ca
 <img src="https://github.com/chen-chien-lung/IOS_ChattingRoom/blob/master/UserNotification.png?raw=true">
 
 
-<div>
+<pre>
 -(void)doPost:(NSString*) urlString parameters:(NSDictionary*)
 parameters completion:(DoneHandler)doneHandler{
     
@@ -45,4 +45,4 @@ parameters completion:(DoneHandler)doneHandler{
     ];
     
 }
-</div>
+</pre>
