@@ -57,7 +57,7 @@ static Communicator * _singletonCommunicator =nil;
     AFHTTPSessionManager * manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"image/jpeg"];
-    //stringByAppendingPathComponent 添加路徑或檔名時可幫忙加斜線/
+    
     NSString * finalPhotoURLString = [PHOTOS_BASE_URL stringByAppendingPathComponent:fileName];
     
     [manager GET:finalPhotoURLString
@@ -96,14 +96,11 @@ parameters data:(NSData*)data completion:(DoneHandler)doneHandler{
     NSString * jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
     
     NSDictionary * finalParameters = @{DATA_KEY:jsonString};
-    
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
     [manager POST:urlString parameters:finalParameters
     constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        //constructingBodyWithBlock 讓我們決定要傳什麼樣的檔案 formData
-        [formData appendPartWithFileData:data name:@"fileToUpload" fileName:@"image.jpg" mimeType:@"image/jpg"];
         
+        [formData appendPartWithFileData:data name:@"fileToUpload" fileName:@"image.jpg" mimeType:@"image/jpg"];
     } progress:nil
     success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
@@ -115,8 +112,6 @@ parameters data:(NSData*)data completion:(DoneHandler)doneHandler{
         NSLog(@"doPOST Error:%@",error);
         doneHandler(error,nil);
     }];
-
-
 }
 
 //text
