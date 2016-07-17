@@ -99,7 +99,7 @@ parameters data:(NSData*)data completion:(DoneHandler)doneHandler{
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager POST:urlString parameters:finalParameters
     constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        
+        //constructingBodyWithBlock 讓我們決定要傳什麼樣的檔案 formData
         [formData appendPartWithFileData:data name:@"fileToUpload" fileName:@"image.jpg" mimeType:@"image/jpg"];
     } progress:nil
     success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
